@@ -47,7 +47,7 @@ public class PartidaSB implements PartidaSBLocal {
                 if (contValidRonda < 9) {
                     if (ronda.esChuza()) {
                         // 1. Si es una chuza (X) el valor total es 10 más los puntajes de los dos siguientes tiros
-                        ronda.setPuntajeTotal(sumatoriaPuntajesGlobal + ronda.getPuntajeBrutoTotal() + (rondaSiguiente.esChuza() ? rondaSiguiente.getPuntajeBrutoTotal() + (rondaSiguiente2.esChuza() ? (rondaSiguiente2.getListaPuntajes().size() == 3 ? rondaSiguiente2.getListaPuntajes().get(0) : rondaSiguiente2.getPuntajeBrutoTotal()) : rondaSiguiente2.getListaPuntajes().get(0) + rondaSiguiente2.getListaPuntajes().get(1)) : rondaSiguiente.getListaPuntajes().get(0) + rondaSiguiente.getListaPuntajes().get(1)));
+                        ronda.setPuntajeTotal(sumatoriaPuntajesGlobal + ronda.getPuntajeBrutoTotal() + (rondaSiguiente.esChuza() ? rondaSiguiente.getPuntajeBrutoTotal() + (rondaSiguiente2.esChuza() ? rondaSiguiente2.getPuntajeBrutoTotal() : (rondaSiguiente2.getListaPuntajes().size() == 3 ? rondaSiguiente2.getListaPuntajes().get(0) : rondaSiguiente2.getListaPuntajes().get(0) + rondaSiguiente2.getListaPuntajes().get(1))) : rondaSiguiente.getListaPuntajes().get(0) + rondaSiguiente.getListaPuntajes().get(1)));
                     } else if (ronda.esSpare()) {
                         // 2. Si es un spare (/) el valor total es 10 más el puntaje del siguiente tiro
                         ronda.setPuntajeTotal(sumatoriaPuntajesGlobal + ronda.getPuntajeBrutoTotal() + (rondaSiguiente.esChuza() ? rondaSiguiente.getPuntajeBrutoTotal() : rondaSiguiente.getListaPuntajes().get(0)));
