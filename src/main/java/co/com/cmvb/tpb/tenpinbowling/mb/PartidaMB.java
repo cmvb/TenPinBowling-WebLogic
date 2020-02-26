@@ -63,18 +63,6 @@ public class PartidaMB extends BaseMB<JuegoDto> implements Serializable {
         this.mostrarResultados = false;
         if (this.getArchivo() != null) {
             if (validaciones()) {
-                for (String jugador : this.mapaJugadoresPuntajes.keySet()) {
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("JUGADOR: " + jugador);
-                    for (RondaDto ronda : this.mapaJugadoresPuntajes.get(jugador)) {
-                        System.out.println("Ronda: " + ronda.getId());
-                        System.out.println("Puntajes: " + ronda.getListaPuntajes());
-                        System.out.println("PuntajesTexto: " + ronda.getListaPuntajesTexto());
-                        System.out.println("PuntajeTotal: " + ronda.getPuntajeTotal());
-                    }
-                    System.out.println("RONDAS: " + this.mapaJugadoresPuntajes.get(jugador).size());
-                    System.out.println("---------------------------------------------------");
-                }
                 FacesMessage message = new FacesMessage("Información", this.getArchivo().getFileName() + " Ha sido procesado correctamente.");
                 FacesContext.getCurrentInstance().addMessage("INFORMATION", message);
                 this.disabledJugar = true;
