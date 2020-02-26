@@ -29,7 +29,7 @@ Esta aplicación está orientada a la web. La presentación es JSF (Java Server 
 
 1. Bajar las dependencias maven que se encuentran en el archivo: pom.xml.
 
-1.1. Si usa NetBeans: Click derecho al proyecto -> Cleand.
+1.1. Si usa NetBeans: Click derecho al proyecto -> Clean.
 
 2. Compilar el proyecto y generar el archivo EAR.
 
