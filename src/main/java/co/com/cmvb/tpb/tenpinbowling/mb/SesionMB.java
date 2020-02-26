@@ -1,6 +1,5 @@
 package co.com.cmvb.tpb.tenpinbowling.mb;
 
-import co.com.cmvb.tpb.tenpinbowling.util.UtilPropertiesMensaje;
 import co.com.cmvb.tpb.tenpinbowling.constantes.DireccionesWeb;
 import co.com.cmvb.tpb.tenpinbowling.dto.Sesion;
 import co.com.cmvb.tpb.tenpinbowling.util.Util;
@@ -42,13 +41,13 @@ public class SesionMB implements Serializable {
     private String mensajeExcepcion;
 
     @Getter
-    private final String aplicativoNombre = UtilPropertiesMensaje.getProperty("tpb.generico.aplicativo.nombre", (Object) null);
+    private final String aplicativoNombre = "Ten Pin-Bowling";
 
     @Getter
     private final String versionProyecto = "Vs. 1.0.0";
 
     @Getter
-    private final String fechaVProyecto = "13/11/2019 08:00 am";
+    private final String fechaVProyecto = "23/02/2020 10:00 pm";
 
     /**
      * Método para iniciar sesión al aplicativo

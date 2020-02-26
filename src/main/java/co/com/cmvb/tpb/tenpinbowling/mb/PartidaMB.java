@@ -1,7 +1,6 @@
 package co.com.cmvb.tpb.tenpinbowling.mb;
 
 import co.com.cmvb.tpb.tenpinbowling.configuracion.CoreException;
-import co.com.cmvb.tpb.tenpinbowling.util.UtilPropertiesMensaje;
 import co.com.cmvb.tpb.tenpinbowling.dto.JuegoDto;
 import co.com.cmvb.tpb.tenpinbowling.dto.RondaDto;
 import co.com.cmvb.tpb.tenpinbowling.service.PartidaSBLocal;
@@ -108,7 +107,7 @@ public class PartidaMB extends BaseMB<JuegoDto> implements Serializable {
             this.getPartidasHistorial().add(partida);
             this.contadorPartidas++;
         } catch (CoreException ex) {
-            Util.obtenerSesionActual().setMensajeExcepcion(String.format(ex.getMessage(), UtilPropertiesMensaje.getProperty("tpb.excepcion.datamodel.save.nivel")));
+            Util.obtenerSesionActual().setMensajeExcepcion(String.format(ex.getMessage(), ex.getMessage()));
             Util.enviarPantallaException(ex);
         }
     }
@@ -149,7 +148,7 @@ public class PartidaMB extends BaseMB<JuegoDto> implements Serializable {
                 FacesContext.getCurrentInstance().addMessage("WARNING", message);
             }
         } catch (IOException | CoreException ex) {
-            Util.obtenerSesionActual().setMensajeExcepcion(String.format(ex.getMessage(), UtilPropertiesMensaje.getProperty("tpb.excepcion.datamodel.save.nivel")));
+            Util.obtenerSesionActual().setMensajeExcepcion(String.format(ex.getMessage(), ex.getMessage()));
             Util.enviarPantallaException(new CoreException(ex));
         }
 
@@ -171,7 +170,7 @@ public class PartidaMB extends BaseMB<JuegoDto> implements Serializable {
 
             result = this.mapaJugadoresPuntajes != null && !this.mapaJugadoresPuntajes.isEmpty();
         } catch (IOException | CoreException ex) {
-            Util.obtenerSesionActual().setMensajeExcepcion(String.format(ex.getMessage(), UtilPropertiesMensaje.getProperty("tpb.excepcion.datamodel.save.nivel")));
+            Util.obtenerSesionActual().setMensajeExcepcion(String.format(ex.getMessage(), ex.getMessage()));
             Util.enviarPantallaException(new CoreException(ex));
         }
 
