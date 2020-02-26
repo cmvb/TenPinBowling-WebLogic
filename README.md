@@ -7,14 +7,16 @@ Esta aplicación está orientada a la web. La presentación es JSF (Java Server 
 
 # Requerimientos previos
 
-1. Instalar el servidor de aplicaciones WebLogic para el despliegue del proyecto
-1.1. Tutorial para instalación en windows: 
-1.2. Tutorial para instalación en linux: 
+1. Instalar el servidor de aplicaciones WebLogic para el despliegue del proyecto.
+1.1. Tutorial para instalación en windows: https://www.youtube.com/watch?v=rcJQ5bNUP4E
+1.2. Tutorial para instalación en linux: https://www.youtube.com/watch?v=GfJ6HJouO6A
+1.3. URL consola local por defecto WebLogic: http://localhost:7001/console/login/LoginForm.jsp
 
-2. Integrar el servidor de aplicaciones WebLogic en algún IDE (Preferencia: NetBeans)
-2.1. Tutorial para creación de servidor WebLogic en NetBeans: 
+2. Integrar el servidor de aplicaciones WebLogic en algún IDE (Preferencia: NetBeans).
+2.1. Tutorial para creación de servidor WebLogic en NetBeans: https://www.youtube.com/watch?v=a0iwNNEMdJw
 
 3. (Opcional) Subir manualmente los archivos ear en el servidor.
+3.1. Tutorial para desplegar EAR/WAR en un servidor WebLogic: https://www.youtube.com/watch?v=RGsOkS4U-Mo&t=177s
 
 # Instrucciones de ejecución y despliegue
 
