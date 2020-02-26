@@ -1,8 +1,5 @@
 package co.com.cmvb.tpb.tenpinbowling.mb;
 
-import co.com.cmvb.tpb.tenpinbowling.enums.EAction;
-import co.com.cmvb.tpb.tenpinbowling.enums.EEstado;
-import co.com.cmvb.tpb.tenpinbowling.enums.EPhase;
 import java.io.Serializable;
 import java.util.List;
 import lombok.Getter;
@@ -30,17 +27,5 @@ public abstract class BaseMB<T> implements Serializable {
     @Getter
     @Setter
     private UploadedFile archivo;
-
-    @Getter
-    @Setter
-    private EPhase phase;
-
-    @Getter
-    @Setter
-    private EAction action;
-
-    @Setter
-    @Getter
-    private EEstado estado;
 
 }

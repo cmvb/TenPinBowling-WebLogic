@@ -1,8 +1,6 @@
 package co.com.cmvb.tpb.tenpinbowling.mb;
 
 import co.com.cmvb.tpb.tenpinbowling.configuracion.CoreException;
-import co.com.cmvb.tpb.tenpinbowling.enums.EAction;
-import co.com.cmvb.tpb.tenpinbowling.enums.EPhase;
 import co.com.cmvb.tpb.tenpinbowling.util.UtilPropertiesMensaje;
 import co.com.cmvb.tpb.tenpinbowling.dto.JuegoDto;
 import co.com.cmvb.tpb.tenpinbowling.dto.RondaDto;
@@ -53,8 +51,6 @@ public class PartidaMB extends BaseMB<JuegoDto> implements Serializable {
         this.mostrarResultados = false;
         this.disabledJugar = false;
         this.contadorPartidas = 1;
-        this.setAction(EAction.QUERY);
-        this.setPhase(EPhase.QUERY);
         this.setPartidaActual(new JuegoDto());
         this.setPartidaSeleccionada(new JuegoDto());
         this.setPartidasHistorial(new ArrayList<JuegoDto>());
