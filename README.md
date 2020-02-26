@@ -18,6 +18,8 @@ Esta aplicación está orientada a la web. La presentación es JSF (Java Server 
 3. (Opcional) Subir manualmente los archivos ear en el servidor.
 3.1. Tutorial para desplegar EAR/WAR en un servidor WebLogic: https://www.youtube.com/watch?v=RGsOkS4U-Mo&t=177s
 
+4. Dentro del proyecto hay archivos de prueba en la ruta: '.../src/test/Test Files'
+
 # Instrucciones de ejecución y despliegue
 
 1. Bajar las dependencias maven que se encuentran en el archivo: pom.xml.
