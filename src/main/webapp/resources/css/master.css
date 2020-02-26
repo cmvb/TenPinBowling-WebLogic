@@ -1,0 +1,124 @@
+/*TPB*/
+
+.displayBlock{
+    display: block !important;
+}
+
+.displayNone{
+    display: none !important;
+}
+
+.ui-paginator-page, 
+.ui-paginator-first, .ui-paginator-prev,
+.ui-paginator-next, .ui-paginator-last{
+    box-shadow: 1px 1px 1px black;
+}
+
+.ui-paginator-page:hover, 
+.ui-paginator-first:hover, .ui-paginator-prev:hover,
+.ui-paginator-next:hover, .ui-paginator-last:hover{
+    box-shadow: none;
+}
+
+.ui-paginator.ui-paginator-bottom{
+    border-bottom: #cdf 3px solid;
+    border-bottom: #cdf 3px solid;
+    border-image: linear-gradient( to right, #f2f2f2, #f2f2f2 30%, #cdf 45%, #f2f2f2 70%, #f2f2f2 ) 1800 0%;
+    margin-bottom: 10px;
+}
+
+.points.blue {
+    background: #cdf;
+    border: 1px solid #cccccc;
+}
+
+.points.rolls.blue {
+    background: #c3d7ff;
+}
+
+.points.white {
+    background: #fff;
+}
+
+.points.rolls.white {
+    background: #fafafa;
+}
+
+.scoring >table {
+    width: 100%;
+    table-layout: fixed;
+    background: #eee;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.scoring >table>thead, .scoring >table>tbody {
+    border-top: 3px solid #ccc;
+}
+
+.scoring >table .name {
+    width: 9%;
+    text-align: left;
+    padding-left: .5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid #cccccc;
+}
+.scoring >table th, .scoring >table td {
+    text-align: center;
+    vertical-align: middle;
+    height: 2rem;
+    line-height: 2rem;
+}
+.scoring >table th {
+    font-weight: 900;
+    color: #444;
+}
+
+.btn:disabled{
+    cursor: no-drop !important;
+}
+
+.total{
+    border: 1px solid #cccccc;
+}
+
+.labelTitle{
+    font-weight: bold;
+    background: #ffffffab;
+    min-width: 200px;
+    border-radius: 5px;
+}
+
+.labelP{    
+    border-radius: 5px;
+    color: black;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.btnJuego{
+    background: white;
+    cursor: pointer;
+    display: block;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px grey;
+}
+
+.btnJuego:hover{
+    color: black !important;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+a.disabled{
+    cursor: no-drop !important;
+    background: gray;
+}
+
+.ui-paginator-top{
+    display: none;
+}

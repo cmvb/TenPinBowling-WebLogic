@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <!-- METADATA -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
+        <meta name="description" content="Ten Pin-Bowling"/>
+        <meta name="author" content="CMVB"/>
+        <meta name="keywords" content="Ten Pin-Bowling"/>
+
+        <!-- TITLE - FAVICON -->
+        <title>Ten Pin-Bowling</title>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+
+        <!-- Fonts And Icons -->
+        <h:outputStylesheet name="fontawesome5-all.css" library="css"/>        
+        <h:outputStylesheet name="font-face.css" library="css"/>
+
+        <!-- Bootstrap CSS-->
+        <h:outputStylesheet name="bootstrap-4.1/bootstrap.min.css" library="vendor"/>
+
+        <!-- Vendor CSS-->
+        <h:outputStylesheet name="animsition/animsition.min.css" library="vendor"/>
+        <h:outputStylesheet name="bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" library="vendor"/>
+        <h:outputStylesheet name="wow/animate.css" library="vendor"/>
+        <h:outputStylesheet name="css-hamburgers/hamburgers.min.css" library="vendor"/>
+        <h:outputStylesheet name="perfect-scrollbar/perfect-scrollbar.css" library="vendor"/>
+
+        <!-- Main CSS-->
+        <h:outputStylesheet name="theme.css" library="css"/>
+
+        <!-- Master Edit Only This CSS-->
+        <h:outputStylesheet name="master.css" library="css"/>
+        <h:outputStylesheet name="bootstrap-datepicker.min.css" library="css"/>
+        <h:outputStylesheet name="bootstrap-notify.css" library="css"/>
+
+        <!-- LOGINS -->
+        <h:outputStylesheet name="select2.min.css" library="css"/>
+
+        <!-- Jquery JS-->
+        <h:outputScript name="jquery-3.2.1.min.js" library="vendor"/>
+    </h:head>
+
+    <h:body class="animsition animated fadeIn">
+        <!--MODALES NOTIFICACIONES-->        
+        <div id="bloqueoMenu" class="modal-backdrop fade displayNone" style="z-index:2;background-color: rgba(0,0,0,.5)"></div>
+
+        <!--CONTENIDO-->        
+        <div class="page-wrapper">
+            <div class="page-content--bge5 over-scroll">
+                <div id="container" class="container padContainer">
+                    <h:panelGroup layout="block" class="page-container">
+                        <ui:include id="modelDesktop" src="/template/headerTemplate.xhtml"/>
+                        <!-- MAIN CONTENT-->
+                        <div class="main-content">
+                            <div class="section__content section__content--p30">
+                                <div class="container-fluid">
+                                    <ui:insert name="content">
+
+                                    </ui:insert>
+                                </div>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                </div>
+            </div>
+        </div>
+    </h:body>
+
+    <!-- Bootstrap JS-->
+    <h:outputScript name="bootstrap-4.1/popper.min.js" library="vendor"/>
+    <h:outputScript name="bootstrap-4.1/bootstrap.min.js" library="vendor"/>
+    <h:outputScript name="bootstrap-datepicker.js" library="js"/>
+    <h:outputScript name="bootstrap-datepicker.es.js" library="js"/>    
+    <h:outputScript name="bootstrap-notify.js" library="js"/>
+
+    <!-- Vendor JS -->    
+    <h:outputScript name="wow/wow.min.js" library="vendor"/>
+    <h:outputScript name="animsition/animsition.min.js" library="vendor"/>
+    <h:outputScript name="bootstrap-progressbar/bootstrap-progressbar.min.js" library="vendor"/>
+    <h:outputScript name="counter-up/jquery.waypoints.min.js" library="vendor"/>
+    <h:outputScript name="counter-up/jquery.counterup.min.js" library="vendor"/>
+    <h:outputScript name="circle-progress/circle-progress.min.js" library="vendor"/>
+    <h:outputScript name="perfect-scrollbar/perfect-scrollbar.min.js" library="vendor"/>
+    <h:outputScript name="chartjs/Chart.bundle.min.js" library="vendor"/>
+    <h:outputScript name="select2.full.min.js" library="js"/>
+    <h:outputScript name="i18n/es.js" library="js"/>
+
+    <!-- Main JS-->
+    <h:outputScript name="bootstrap-notify.js" library="js"/>
+    <h:outputScript name="multiselect.js" library="js"/>
+    <h:outputScript name="main.js" library="js"/>
+</html>

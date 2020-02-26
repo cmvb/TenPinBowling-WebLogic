@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" >
+
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
+        <meta name="description" content="Ten Pin-Bowling"/>
+        <meta name="author" content="CMVB"/>
+        <meta name="keywords" content="Ten Pin-Bowling"/>
+
+        <!-- TITLE - FAVICON -->
+        <title>Ten Pin-Bowling</title>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+
+        <!-- Fonts And Icons -->
+        <h:outputStylesheet name="fontawesome5-all.css" library="css"/>
+        <h:outputStylesheet name="font-face.css" library="css"/>
+
+        <!-- Bootstrap CSS-->
+        <h:outputStylesheet name="bootstrap-4.1/bootstrap.min.css" library="vendor"/>
+
+        <!-- Main CSS-->
+        <h:outputStylesheet name="theme.css" library="css"/>
+
+        <!-- Master Edit Only This CSS-->
+        <h:outputStylesheet name="master.css" library="css"/>
+    </h:head>   
+
+    <h:body onload="mostrarMensajeError500()" class="animsition animated fadeIn backg" style="opacity: 1 ">
+        <h:form id="form" prependId="false" >
+            <div class="page-wrapper">
+                <div class="page-content--bge5">
+                    <div class="container">
+                        <div class="login-wrap">
+                            <div class="login-content">
+                                <div class="login-logo">
+                                    <a href="#">
+                                        <h:panelGroup id="logo" class="icon-cmvb">
+                                            <center>
+                                            </center>
+                                        </h:panelGroup>
+                                    </a>
+                                </div>
+                                <div class="login-form">
+                                    <form action="" method="post">
+                                        <div class="row justify-content-center" style="padding: 0 10px;">
+                                            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 textCenter">
+                                                <a href="#" onclick="cerrarSistema('TPB-web')">
+                                                    <h:graphicImage library="images" 
+                                                                    name="500.png" 
+                                                                    class="icon-logout-error"/>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 msjError textCenter" style="margin-top: 2%">
+                                                <div id="error500Title"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="espacio"></div>
+                                        <div class="espacio"></div>
+
+                                        <div class="row justify-content-center" style="padding: 0 10px;">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 textCenter">
+                                                <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel">
+                                                        <div class="panel-heading" role="tab" id="headingOne">
+                                                            <h4 class="panel-title">
+                                                                <a id="btnEtapas" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse500" aria-expanded="true" aria-controls="collapse500">
+                                                                    <i class="fa fa-thumb-tack icon-noty"></i>Consola
+                                                                </a>
+                                                            </h4>
+                                                        </div>
+                                                        <div id="collapse500" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                            <div id="error500" class="error500Xhtml scrollbar"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+
+        <!-- Jquery JS-->
+        <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+        <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+
+        <!-- Bootstrap JS-->
+        <h:outputScript name="bootstrap-4.1/popper.min.js" library="vendor"/>
+        <h:outputScript name="bootstrap-4.1/bootstrap.min.js" library="vendor"/>
+
+        <!-- Main JS-->
+        <h:outputScript name="main.js" library="js"/>
+    </h:body>
+</ui:composition>

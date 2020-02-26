@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"        
+    xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition  template="/template/templateGeneral.xhtml">
+        <ui:define name="content">
+            <h:form id="formMtto" prependId="false" enctype="multipart/form-data">
+                <p:growl id="messages" showDetail="true" />
+
+                <div style="background: #ffffff85;padding:0" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card">
+                    <h:panelGroup class="card-body card-block" layout="block">                            
+                        <!-- CUERPO FILE -->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+                                <!-- NUEVO JUEGOS -->
+                                <h:outputLabel styleClass="labelTitle" value="Cargar Nuevo Juego" />
+
+                                <p class="labelP">Cargue un archivo con extensión (.txt) para iniciar un juego de Ten Pin-Bowling</p>
+
+                                <br />
+
+                                <h:panelGroup styleClass="contenedor-file" layout="block">
+                                    <p:fileUpload chooseIcon="fa fa-file" value="#{partidaMB.archivo}" mode="simple" skinSimple="true" label="Cargar Archivo"
+                                                  dragDropSupport="false" update="messages msgGlobal" sizeLimit="100000" allowTypes="/(\.|\/)(txt)$/" />
+                                </h:panelGroup>
+                            </div>
+                        </div>
+
+                        <div class="espacio"></div>
+
+                        <center>
+                            <!-- BUTTONS ACTIONS -->
+                            <h:panelGroup class="row justify-content-center form-bootons" layout="block">
+                                <h:panelGroup styleClass="contenedor-file col-lg-4 col-md-4 col-sm-12 col-xs-12" layout="block">
+                                    <a onclick="pulsarClickPorId('procesar')" class="btn btn-sm btnJuego paddingMarginNone"><i class="fa fa-cogs" style="margin-right: 5px"/>Procesar Archivo</a>
+                                    <p:commandButton id="procesar" styleClass="displayNone" ajax="false" action="#{partidaMB.procesarArchivo()}" />
+                                </h:panelGroup>
+                                <h:panelGroup styleClass="contenedor-file col-lg-4 col-md-4 col-sm-12 col-xs-12" layout="block">
+                                    <a onclick="pulsarClickPorId('jugar')" class="btn btn-sm btnJuego paddingMarginNone #{!partidaMB.disabledJugar ? 'disabled' : ''}"><i class="fa fa-gamepad" style="margin-right: 5px"/>Jugar</a>
+                                    <p:commandButton id="jugar" styleClass="displayNone" disabled="#{!partidaMB.disabledJugar}" ajax="false" action="#{partidaMB.jugar()}"/>
+                                </h:panelGroup>
+
+                                <!--Mensaje Validaciones-->
+                                <h:messages id="msgGlobal" styleClass="mensajeValidacion" globalOnly="true"/>
+                            </h:panelGroup>
+                        </center>
+                    </h:panelGroup>
+                    <center>
+                        <!-- TABLE JUEGO ACTUAL-->
+                        <h:panelGroup layout="block" class="card-footer" rendered="#{partidaMB.mostrarResultados}">
+                            <h:outputLabel styleClass="labelTitle" value="Juego Actual" />
+
+                            <h:panelGroup class="col-md-12 col-md-12"  layout="block">
+                                <div class="scoring">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="name">Jugador</th>
+                                                <th colspan="2" class="points blue">1</th>
+                                                <th colspan="2" class="points blue">2</th>
+                                                <th colspan="2" class="points blue">3</th>
+                                                <th colspan="2" class="points blue">4</th>
+                                                <th colspan="2" class="points blue">5</th>
+                                                <th colspan="2" class="points blue">6</th>
+                                                <th colspan="2" class="points blue">7</th>
+                                                <th colspan="2" class="points blue">8</th>
+                                                <th colspan="2" class="points blue">9</th>
+                                                <th colspan="3" class="points blue">10</th>
+                                                <th class="total">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <p:repeat value="#{partidaMB.mapaJugadoresPuntajes.keySet()}" var="jugador">
+                                                <tr>
+                                                    <td class="name" rowspan="2" tabindex="0" title="">#{jugador}</td>
+                                                    <p:repeat value="#{partidaMB.mapaJugadoresPuntajes.get(jugador)}" var="ronda">
+                                                        <p:repeat value="#{ronda.listaPuntajesTexto}" var="puntaje">
+                                                            <td colspan="1" class="points rolls white">#{puntaje}</td>
+                                                        </p:repeat>
+                                                    </p:repeat>
+                                                    <td class="total" rowspan="2">666</td>
+                                                </tr>
+                                                <tr>
+                                                    <p:repeat value="#{partidaMB.mapaJugadoresPuntajes.get(jugador)}" var="ronda">
+                                                        <td colspan="#{ronda.listaPuntajes.size() eq 2 ? 2 : 3}" class="empty points rolls white"> #{ronda.puntajeTotal} </td>
+                                                    </p:repeat>
+                                                </tr>
+                                            </p:repeat>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </h:panelGroup>
+                        </h:panelGroup>
+
+                        <h:panelGroup layout="block" class="card-footer" rendered="#{partidaMB.mostrarResultados}">
+                            <!-- TABLE JUEGOS PREVIOS -->
+                            <h:outputLabel styleClass="labelTitle" value="Juegos Previos" />
+
+                            <h:panelGroup class="col-md-12 col-md-12"  layout="block">
+                                <h:panelGroup rendered="#{partidaMB.partidasHistorial != null}">
+                                    <h:panelGroup id="dataTable" class="table-content">
+                                        <h:panelGroup id="panelTabla" layout="block" styleClass="table-responsive table--no-card m-b-30">
+                                            <center>
+                                                <p:dataTable var="juego" value="#{partidaMB.partidasHistorial}" rows="5"
+                                                             widgetVar="tablaHistorico" paginator="true" reflow="true" id="tablaHistorico"
+                                                             rowsPerPageTemplate="5,7,25,100" pageLinks="5"
+                                                             styleClass="table table-borderless table-striped table-earning"
+                                                             paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                                             disabledSelection="true" emptyMessage="No hay resultados para mostrar">
+                                                    
+                                                    <p:column styleClass="textLeft" headerText="Ganador">
+                                                        <h:outputText value="#{juego.ganador.nombre}"/>
+                                                    </p:column>
+                                                    <p:column styleClass="textLeft" headerText="Puntaje Máximo">
+                                                        <h:outputText value="#{juego.puntajeMaximo}"/>
+                                                    </p:column>
+                                                    <p:column styleClass="textCenter iconCellDT">
+                                                        <h:commandLink action="#{partidaMB.mostrarJuegoPrevio(juego)}">
+                                                            <i class="fas fa-edit marg-top-3"></i>
+                                                        </h:commandLink>
+                                                    </p:column>
+                                                </p:dataTable>
+
+                                                <!--Loader-->
+                                                <p:blockUI block="tablaHistorico" trigger="tablaHistorico" widgetVar="bui">
+                                                    <p:graphicImage styleClass="blockUI" name="images/Load.gif"/>
+                                                </p:blockUI>
+                                            </center>
+                                        </h:panelGroup>
+                                    </h:panelGroup>
+                                </h:panelGroup>
+                            </h:panelGroup>
+                        </h:panelGroup>
+                    </center>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>    
