@@ -71,7 +71,6 @@
                                                 <th colspan="2" class="points blue">8</th>
                                                 <th colspan="2" class="points blue">9</th>
                                                 <th colspan="3" class="points blue">10</th>
-                                                <th class="total">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -83,11 +82,10 @@
                                                             <td colspan="1" class="points rolls white">#{puntaje}</td>
                                                         </p:repeat>
                                                     </p:repeat>
-                                                    <td class="total" rowspan="2">666</td>
                                                 </tr>
                                                 <tr>
                                                     <p:repeat value="#{partidaMB.mapaJugadoresPuntajes.get(jugador)}" var="ronda">
-                                                        <td colspan="#{ronda.listaPuntajes.size() eq 2 ? 2 : 3}" class="empty points rolls white"> #{ronda.puntajeTotal} </td>
+                                                        <td colspan="#{ronda.listaPuntajes.size() eq 2 ? 2 : 3}" class="empty points rolls #{ronda.listaPuntajes.size() eq 2 ? 'white' : 'blue fontBold'}"> #{ronda.puntajeTotal} </td>
                                                     </p:repeat>
                                                 </tr>
                                             </p:repeat>
@@ -112,7 +110,7 @@
                                                              styleClass="table table-borderless table-striped table-earning"
                                                              paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                                              disabledSelection="true" emptyMessage="No hay resultados para mostrar">
-                                                    
+
                                                     <p:column styleClass="textLeft" headerText="Ganador">
                                                         <h:outputText value="#{juego.ganador.nombre}"/>
                                                     </p:column>
