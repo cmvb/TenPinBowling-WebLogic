@@ -22,7 +22,7 @@ Esta aplicación está orientada a la web. La presentación es JSF (Java Server 
 1.1. Si usa NetBeans: Click derecho al proyecto -> Cleand.
 
 2. Compilar el proyecto y generar el archivo EAR.
-2.1. Si usa NetBeans: Click derecho al proyecto -> Cleand and Build.
+2.1. Si usa NetBeans: Click derecho al proyecto -> Clean and Build.
 
 3. Al compilar se creará la carpeta "target". Desplegar en el servidor de aplicaciones WebLogic el archivo EAR que se encuentra allí.
 3.1. Si usa NetBeans: Click derecho al proyecto -> Debug.
